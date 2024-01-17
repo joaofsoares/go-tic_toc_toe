@@ -27,9 +27,9 @@ func main() {
 	}
 
 	if token == 'X' && tie == false {
-		fmt.Printf("Player 2 - %s Wins", p2)
+		fmt.Printf("Player 2 - %s Wins\n", p2)
 	} else if token == '0' && tie == false {
-		fmt.Printf("Player 1 - %s Wins", p1)
+		fmt.Printf("Player 1 - %s Wins\n", p1)
 	} else {
 		fmt.Println("It's a draw!")
 	}
@@ -125,7 +125,8 @@ func assignPosition(p1 string, p2 string,
 		assignPosition(p1, p2, space, token, row, column)
 	}
 
-	printBoard(*space)
+	// too much information
+	// printBoard(*space)
 }
 
 func checkWinner(space [3][3]int, tie *bool) bool {
