@@ -27,9 +27,9 @@ func main() {
 	}
 
 	if token == 'X' && tie == false {
-		fmt.Printf("Player 1 - %s Wins", p1)
-	} else if token == '0' && tie == false {
 		fmt.Printf("Player 2 - %s Wins", p2)
+	} else if token == '0' && tie == false {
+		fmt.Printf("Player 1 - %s Wins", p1)
 	} else {
 		fmt.Println("It's a draw!")
 	}
@@ -48,7 +48,9 @@ func printBoard(space [3][3]int) {
 	fmt.Println()
 }
 
-func assignPosition(p1 string, p2 string, space *[3][3]int, token *rune, row *int, column *int) {
+func assignPosition(p1 string, p2 string,
+	space *[3][3]int, token *rune, row *int, column *int) {
+
 	var digit int
 
 	if *token == 'X' {
@@ -108,10 +110,14 @@ func assignPosition(p1 string, p2 string, space *[3][3]int, token *rune, row *in
 
 	if digit < 1 || digit > 9 {
 		fmt.Println("Invalid!")
-	} else if *token == 'X' && (*space)[*row][*column] != 'X' && (*space)[*row][*column] != '0' {
+	} else if *token == 'X' && (*space)[*row][*column] != 'X' &&
+		(*space)[*row][*column] != '0' {
+
 		(*space)[*row][*column] = 'X'
 		*token = '0'
-	} else if *token == '0' && (*space)[*row][*column] != 'X' && (*space)[*row][*column] != '0' {
+	} else if *token == '0' && (*space)[*row][*column] != 'X' &&
+		(*space)[*row][*column] != '0' {
+
 		(*space)[*row][*column] = '0'
 		*token = 'X'
 	} else {
